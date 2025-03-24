@@ -1,5 +1,5 @@
 // This is just test data, but the real data will be taken out of a SupaBase table
-const movieData = [
+export const movieData = [
     {
         id: 1,
         name: "movie1",
