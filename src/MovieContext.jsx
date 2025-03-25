@@ -24,11 +24,6 @@ const MovieProvider = ({children}) => {
         }
     }
 
-    // TEST
-    useEffect(() => {
-        console.log(selectedAttributes);
-    }, [selectedAttributes])
-
     return <MovieContext.Provider value={{
         selectedAttributes, setSelectedAttributes,
         removeFromAttributes, addToAttributes
