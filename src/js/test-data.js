@@ -2,26 +2,50 @@
 export const testMovieData = [
     {
         id: 1,
-        name: "Happy Gilmore",
-        director: "Dennis Dugan",
+        name: "School of Rock",
+        director: "Richard Linklater",
         weather: "sunny",
         mood: "happy",
-        hobby: "golf"
+        hobby: "music"
     },
     {
         id: 2,
-        name: "movie2",
-        director: "director2",
+        name: "Marley and Me",
+        director: "David Frankel",
         weather: "cloudy",
         mood: "sad",
-        hobby: "sports"
+        hobby: "animals"
     },
     {
         id: 3,
-        name: "movie3",
-        director: "director3",
-        weather: "rainy",
+        name: "Happy Gilmore",
+        director: "Dennis Dugan",
+        weather: "sunny",
         mood: "goofy",
+        hobby: "golf"
+    },
+    {
+        id: 4,
+        name: "Titanic",
+        director: "James Cameron",
+        weather: "rainy",
+        mood: "romantic",
+        hobby: "art"
+    },
+    {
+        id: 5,
+        name: "Twister",
+        director: "Jan de Bont",
+        weather: "windy",
+        mood: "excited",
         hobby: "technology"
+    },
+    {
+        id: 6,
+        name: "Snow Dogs",
+        director: "Brian Levant",
+        weather: "snowy",
+        mood: "goofy",
+        hobby: "animals"
     },
 ];

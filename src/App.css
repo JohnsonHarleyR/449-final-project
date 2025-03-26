@@ -50,6 +50,10 @@
   text-transform: capitalize;
 }
 
+.selector:hover {
+  cursor: pointer;
+}
+
 .selector.on {
   background-color: lime;
   border: 3px solid green;
@@ -58,6 +62,7 @@
 
 .choose-movie {
   display: flex;
-  width: 325px;
+  width: 555px;
   flex-wrap: wrap;
+  justify-content: center;
 }
