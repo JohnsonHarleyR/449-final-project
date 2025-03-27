@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import { MovieContext } from '../MovieContext';
 import '../App.css'
 import Selector from './Selector';
@@ -8,11 +8,11 @@ import { testMovieData } from '../js/test-data';
 const ChooseMovie = ({}) => {
 
     const [chosenMovie, setChosenMovie] = useState(null);
-    const {selectedAttributes} = useContext(MovieContext);
+    const {allMovieInfo, isLoading, selectedAttributes} = useContext(MovieContext);
 
     const grabPossibleAttributes = (attrName) => {
         let newList = [];
-        for (const movie of testMovieData) {
+        for (const movie of allMovieInfo) {
             let newAttr = movie[attrName];
             if (!newList.includes(newAttr)) {
                 newList.push(newAttr);
@@ -21,17 +21,25 @@ const ChooseMovie = ({}) => {
         return newList;
     }
 
-    const [moods, setMoods] = useState(grabPossibleAttributes("mood"));
-    const [weather, setWeather] = useState(grabPossibleAttributes("weather"));
-    const [hobbies, setHobbies] = useState(grabPossibleAttributes("hobby"));
+    const [moods, setMoods] = useState([]);
+    const [weather, setWeather] = useState([]);
+    const [hobbies, setHobbies] = useState([]);
     const attributeTypes = ["mood", "weather", "hobby"];
+
+    useEffect(() => {
+        if (isLoading === false) {
+            setMoods(grabPossibleAttributes("mood"));
+            setWeather(grabPossibleAttributes("weather"));
+            setHobbies(grabPossibleAttributes("hobby"));
+        }
+    }, [isLoading])
 
     // For now, this uses the testing data until we get the database set up
     const determineMovie = () => {
         let bestMovieMatches = [];
         let highestMatchCount = 0;
         // loop through all movies to find one with most matches
-        for (const movie of testMovieData) {
+        for (const movie of allMovieInfo) {
             let matchCount = 0;
             // go through attributes in the movie to see how many of them the user selected
             for (const prop of attributeTypes) {
@@ -60,21 +68,33 @@ const ChooseMovie = ({}) => {
     // All the different attributes will be mapped, in order for a user to select or deselect one
     return (
         <>
-        <div className='choose-movie'>
-            {moods.map((item, index) => (
-                <Selector key={"mood" + index} attribute={item} />
-            ))}
-            {weather.map((item, index) => (
-                <Selector key={"weather" + index} attribute={item} />
-            ))}
-            {hobbies.map((item, index) => (
-                <Selector key={"hobby" + index} attribute={item} />
-            ))}
-        </div>
-        <div>
-            <button className='choose-movie-btn' onClick={determineMovie}>Pick Movie</button>
-            {chosenMovie !== null ? <p>{chosenMovie.name} by {chosenMovie.director}</p> : <p>No Matches Yet</p>}
-        </div>
+            {isLoading ? <h2>Data is still loading...</h2> :
+            <>
+                <div className='choose-movie'>
+                    {moods.map((item, index) => (
+                        <Selector key={"mood" + index} attribute={item} />
+                    ))}
+                    {weather.map((item, index) => (
+                        <Selector key={"weather" + index} attribute={item} />
+                    ))}
+                    {hobbies.map((item, index) => (
+                        <Selector key={"hobby" + index} attribute={item} />
+                    ))}
+                </div>
+                <div>
+                    <button className='choose-movie-btn' onClick={determineMovie}>Pick Movie</button>
+                    {chosenMovie !== null ? 
+                    (<div>
+                        <img src={chosenMovie.image} />;
+                        <h2>{chosenMovie.title}</h2>
+                    </div>)
+                    :
+                    (<p>No matches yet</p>)
+                    }
+                </div>
+            </>
+            }
+            
         </>
         
     );

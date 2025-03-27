@@ -25,7 +25,6 @@ export async function fetchMovieDataById(movieId) {
             genres: fetchedData['genres'],
             image: `${posterPath}${fetchedData["poster_path"]}`
         }
-        console.log('Data: ', data);
         return data;
       } catch (error) {
         console.log("Error in fetch: ", error);
