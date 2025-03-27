@@ -3,6 +3,7 @@ const movieApiToken = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1NWVkOTg1OTE3NTc3MzBiMzMy
 
 export async function fetchMovieDataById(movieId) {
     const url = `https://api.themoviedb.org/3/movie/${movieId}?language=en-US`;
+    const posterPath = "https://media.themoviedb.org/t/p/w600_and_h900_bestv2";
 
     try {
         const response = await fetch(url, {
@@ -12,8 +13,19 @@ export async function fetchMovieDataById(movieId) {
             'Authorization': `Bearer ${movieApiToken}`
           }
         });
-        const data = await response.json();
-        console.log("Data: ", data);
+        const fetchedData = await response.json();
+        // store all the data appropriately
+        const data = {
+            id: movieId,
+            adult: fetchedData['adult'],
+            title: fetchedData['title'],
+            releaseDate: fetchedData['release_date'],
+            tagline: fetchedData['tagline'],
+            overview: fetchedData['overview'],
+            genres: fetchedData['genres'],
+            image: `${posterPath}${fetchedData["poster_path"]}`
+        }
+        console.log('Data: ', data);
         return data;
       } catch (error) {
         console.log("Error in fetch: ", error);

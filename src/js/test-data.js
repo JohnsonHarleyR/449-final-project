@@ -1,7 +1,10 @@
+//URL to look up movie ids for API
+// https://www.themoviedb.org/
+
 // This is just test data, but the real data will be taken out of a SupaBase table
 export const testMovieData = [
     {
-        id: 1,
+        id: 1584,
         name: "School of Rock",
         director: "Richard Linklater",
         weather: "sunny",
@@ -9,7 +12,7 @@ export const testMovieData = [
         hobby: "music"
     },
     {
-        id: 2,
+        id: 14306,
         name: "Marley and Me",
         director: "David Frankel",
         weather: "cloudy",
@@ -17,7 +20,7 @@ export const testMovieData = [
         hobby: "animals"
     },
     {
-        id: 3,
+        id: 9614,
         name: "Happy Gilmore",
         director: "Dennis Dugan",
         weather: "sunny",
@@ -25,7 +28,7 @@ export const testMovieData = [
         hobby: "golf"
     },
     {
-        id: 4,
+        id: 597,
         name: "Titanic",
         director: "James Cameron",
         weather: "rainy",
@@ -33,7 +36,7 @@ export const testMovieData = [
         hobby: "art"
     },
     {
-        id: 5,
+        id: 664,
         name: "Twister",
         director: "Jan de Bont",
         weather: "windy",
@@ -41,7 +44,7 @@ export const testMovieData = [
         hobby: "technology"
     },
     {
-        id: 6,
+        id: 11888,
         name: "Snow Dogs",
         director: "Brian Levant",
         weather: "snowy",
