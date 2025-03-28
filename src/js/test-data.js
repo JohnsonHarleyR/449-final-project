@@ -9,7 +9,7 @@ export const testMovieData = [
         director: "Richard Linklater",
         weather: "sunny",
         mood: "happy",
-        hobby: "music"
+        interest: "music"
     },
     {
         id: 14306,
@@ -17,7 +17,7 @@ export const testMovieData = [
         director: "David Frankel",
         weather: "cloudy",
         mood: "sad",
-        hobby: "animals"
+        interest: "animals"
     },
     {
         id: 9614,
@@ -25,7 +25,7 @@ export const testMovieData = [
         director: "Dennis Dugan",
         weather: "sunny",
         mood: "goofy",
-        hobby: "golf"
+        interest: "golf"
     },
     {
         id: 597,
@@ -33,7 +33,7 @@ export const testMovieData = [
         director: "James Cameron",
         weather: "rainy",
         mood: "romantic",
-        hobby: "art"
+        interest: "art"
     },
     {
         id: 664,
@@ -41,7 +41,7 @@ export const testMovieData = [
         director: "Jan de Bont",
         weather: "windy",
         mood: "excited",
-        hobby: "technology"
+        interest: "technology"
     },
     {
         id: 11888,
@@ -49,6 +49,6 @@ export const testMovieData = [
         director: "Brian Levant",
         weather: "snowy",
         mood: "goofy",
-        hobby: "animals"
+        interest: "animals"
     },
 ];

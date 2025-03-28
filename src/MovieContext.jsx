@@ -45,7 +45,7 @@ const MovieProvider = ({children}) => {
                     ...newData,
                     weather: movieInfo.weather,
                     mood: movieInfo.mood,
-                    hobby: movieInfo.hobby,
+                    interest: movieInfo.interest,
                 });
             } else {
                 console.log("Error loading movie with ID:", movieInfo.id);

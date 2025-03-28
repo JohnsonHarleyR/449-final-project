@@ -23,14 +23,14 @@ const ChooseMovie = ({}) => {
 
     const [moods, setMoods] = useState([]);
     const [weather, setWeather] = useState([]);
-    const [hobbies, setHobbies] = useState([]);
-    const attributeTypes = ["mood", "weather", "hobby"];
+    const [interests, setInterests] = useState([]);
+    const attributeTypes = ["mood", "weather", "interest"];
 
     useEffect(() => {
         if (isLoading === false) {
             setMoods(grabPossibleAttributes("mood"));
             setWeather(grabPossibleAttributes("weather"));
-            setHobbies(grabPossibleAttributes("hobby"));
+            setInterests(grabPossibleAttributes("interest"));
         }
     }, [isLoading])
 
@@ -77,8 +77,8 @@ const ChooseMovie = ({}) => {
                     {weather.map((item, index) => (
                         <Selector key={"weather" + index} attribute={item} />
                     ))}
-                    {hobbies.map((item, index) => (
-                        <Selector key={"hobby" + index} attribute={item} />
+                    {interests.map((item, index) => (
+                        <Selector key={"interest" + index} attribute={item} />
                     ))}
                 </div>
                 <div>
