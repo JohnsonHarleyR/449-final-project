@@ -9,7 +9,8 @@ import MovieGen from './pages/MovieGen'
 function App() {
 
   return (
-    <Router>
+    <MovieProvider>
+      <Router>
 
         <div>
           <nav>
@@ -32,8 +33,9 @@ function App() {
             <Route path="/generator" element={<MovieGen />} />
           </Routes>
         </div>
-      
-    </Router>
+
+      </Router>
+    </MovieProvider>
   )
 }
 

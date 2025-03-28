@@ -1,5 +1,4 @@
 import { useEffect } from "react"
-import MovieProvider from "../MovieContext"
 import { fetchMovieDataById } from "../js/fetch-data";
 
 const Browse = ({}) => {
@@ -9,11 +8,9 @@ const Browse = ({}) => {
     }, []);
 
     return (
-        <MovieProvider>
-            <div>
-                Browse Page Here
-            </div>
-        </MovieProvider>
+        <div>
+            Browse Page Here
+        </div>
     )
 }
 
