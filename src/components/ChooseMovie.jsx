@@ -2,7 +2,6 @@ import { useState, useContext, useEffect } from 'react'
 import { MovieContext } from '../MovieContext';
 import '../App.css'
 import Selector from './Selector';
-import { testMovieData } from '../js/test-data';
 
 // This will allow us to select an attribute and allow us to select more than one
 const ChooseMovie = ({}) => {
