@@ -70,16 +70,23 @@ const ChooseMovie = ({}) => {
             {isLoading ? <h2>Data is still loading...</h2> :
             <>
                 <div className='choose-movie'>
-                    {moods.map((item, index) => (
-                        <Selector key={"mood" + index} attribute={item} />
-                    ))}
-                    {weather.map((item, index) => (
-                        <Selector key={"weather" + index} attribute={item} />
-                    ))}
-                    {interests.map((item, index) => (
-                        <Selector key={"interest" + index} attribute={item} />
-                    ))}
+                    <div className='selection-div'>
+                        {moods.map((item, index) => (
+                                <Selector key={"mood" + index} attribute={item} />
+                            ))}
+                    </div>
+                    <div className='selection-div'>
+                        {weather.map((item, index) => (
+                                <Selector key={"weather" + index} attribute={item} />
+                            ))}
+                    </div>
+                    <div className='selection-div'>
+                        {interests.map((item, index) => (
+                                <Selector key={"interest" + index} attribute={item} />
+                            ))}
+                    </div>
                 </div>
+                
                 <div>
                     <button className='choose-movie-btn' onClick={determineMovie}>Pick Movie</button>
                     {chosenMovie !== null ? 

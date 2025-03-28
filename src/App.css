@@ -1,26 +1,13 @@
 
 .selector {
-  width: 100px;
-  height: 50px;
-  background-color: grey;
-  border: 3px solid black;
-  color: white;
+  display: flex;
   text-transform: capitalize;
-}
-
-.selector:hover {
-  cursor: pointer;
-}
-
-.selector.on {
-  background-color: lime;
-  border: 3px solid green;
-  color: black;
 }
 
 .choose-movie {
   display: flex;
-  width: 555px;
-  flex-wrap: wrap;
-  justify-content: center;
+}
+
+.selection-div {
+  border: 1px solid blue;
 }

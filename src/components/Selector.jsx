@@ -8,8 +8,6 @@ const Selector = ({attribute}) => {
     const [isSelected, setIsSelected] = useState(false);
     const {removeFromAttributes, addToAttributes} = useContext(MovieContext);
 
-    const selectorClass = isSelected ? "selector on" : "selector";
-
     const changeSelected = () => {
         setIsSelected(!isSelected);
     }
@@ -23,7 +21,10 @@ const Selector = ({attribute}) => {
     }, [isSelected]);
 
     return (
-        <div className={selectorClass} onClick={changeSelected}><p>{attribute}</p></div>
+        <div className='selector'>
+            <input type="checkbox" checked={isSelected} onChange={changeSelected} />
+            <p>{attribute}</p>
+        </div>
     );
 }
 
