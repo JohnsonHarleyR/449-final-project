@@ -17,7 +17,7 @@ function App() {
             <img src={logo} alt="Cinemood Logo" className="logo" />
             <h1 className='headertitle'>CINEMOOD</h1>
           </div>
-          <nav className='Navigator'>
+          <nav>
             <ul>
               <li><Link to="/">Home</Link></li>
               <li><Link to="/browse">Browse</Link></li>
