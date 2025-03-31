@@ -15,12 +15,12 @@ const Home = ({}) => {
                 <p> 3. Find hidden gems, trending hits, or comforting favorites suited to your mood.</p>
                 <button>TRY IT NOW!</button>
             </div>
-            <div className="footer">
+            <div>
                 <h1 className="emailhead">Join our Email list for all the new movie updates!</h1>
-                <form action="">
-                    <input type="Enter your email" placeholder="Enter your email"/>
+                <div className="emailinfo">
+                    <input type="Enter your email" placeholder="Enter your email." className="inputinfo"/>
                     <button>Sign up!</button>
-                </form>
+                </div>
             </div>
         </div>
     )

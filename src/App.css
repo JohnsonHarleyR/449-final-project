@@ -16,7 +16,7 @@ header {
 .headertitle {
   font-size: 8rem;
   flex: 1;
-  margin: 0;
+  margin: 0 140px 0 0;
 }
 
 .Logohead {
@@ -29,21 +29,19 @@ header {
   padding: 4px 0px 4px 4px;
 }
 
-
 nav {
   background-color: var(--dark-background-color);
-  height: 50px;
   width: 100%;
-  padding: 5px 0 5px 0;
+  padding: 5px 0 10px 0;
 }
 
 nav ul {
   list-style: none;
   display: flex;
   gap:30px;
-  align-items: center;
   justify-content: center;
 }
+
 nav a {
   background: white;
   color: var(--dark-background-color);
@@ -51,38 +49,22 @@ nav a {
   border-radius: 4px;
   font-weight: bold;
 }
-.Navigator li:hover {
+
+nav a:hover {
   background: #d4e0ff;
+  color: var(--dark-background-color);
+  border: white solid 1px;
 }
 
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-.homepage .footer {
-  text-align: center;
-}
+
 .homepage {
   background-color: #718bd2;
-  min-height: 110vh;
   text-align: left;
-  padding: 20px;
-  flex: 1;
-  width: fit-content;
-}
-
-.homepage, .container {
-  padding: 0;
-  margin: 0;
 }
 
 .homepage div{
-  margin-bottom: 20px;
-  display: initial;
-  flex: 1;
+  padding: 10px;
 }
-
 
 .homepage p {
   margin-left: 30px;
@@ -90,29 +72,55 @@ html, body {
   font-size: 18px;
 }
 
-.homepage button {
-  margin: 10px 30px 
+button {
+  margin: 10px 10px 10px 10px;
+}
+
+button:hover{
+  background-color: var(--dark-background-color);
+  color: white;
 }
 
 .homepage h1 {
   border: var(--dark-background-color) .5px solid;
   border-radius: 4px;
-  margin-right: 480px;
   background-color: #d4e0ff;
   color: var(--dark-background-color);
   padding-left: 5px;
   display: inline-block;
 }
 
-
 .homepage .emailhead {
   border: none;
-  background-color: #718bd2;
+  background: none;
+  display: block;
   color: white;
   font-size: 35px;
+  text-align: center;
+}
+.emailinfo {
+  text-align: center;
 }
 
+.homepage .inputinfo {
+  height: 35px;
+  width: 300px;
+  border-radius: 4px;
+}
 
+::placeholder{
+  color: black;
+  font-size: 15px;
+  padding: 5px;
+  letter-spacing: 1.5px;
+}
+
+input{
+  color: black;
+  font-size: 15px;
+  padding: 5px;
+  letter-spacing: 1.5px;
+}
 
 .selector {
   display: flex;
