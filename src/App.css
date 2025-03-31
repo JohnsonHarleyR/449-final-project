@@ -1,3 +1,127 @@
+body{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif  ;
+  background-color: var(--main-background-color);
+  color: white;
+  letter-spacing: 1px;
+  margin: 0;
+  padding: 0;
+}
+header {
+  width: 100%;
+  height: 190px;
+  background-color: #d4e0ff;
+  color: #122c73;
+  align-items: center;
+  justify-content: center;
+}
+.headertitle {
+  font-size: 8rem;
+  font-weight: bold;
+  flex: 1;
+  text-align: center;
+  margin: 0;
+}
+.Logohead {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.logo {
+  height: 100px;
+  padding: 4px
+}
+.container {
+  justify-content: center;    
+  align-items: center;         
+  height: calc(100vh - 200px);
+  text-align: center;
+}
+
+.Navigator {
+  background-color: #122c73;
+  height: 100%;
+}
+.Navigator ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+.Navigator a {
+  width: 100%;
+  color: white;
+  text-decoration: none;
+  background: white;
+  color: #122c73;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.Navigator a:hover {
+  background: #d4e0ff;
+  color: #122c73;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.homepage {
+  background-color: #718bd2;
+  min-height: 110vh;
+  text-align: left;
+  padding: 20px;
+  flex: 1;
+  width: fit-content;
+}
+
+.homepage div{
+  margin-bottom: 20px;
+  display: initial;
+  flex: 1;
+}
+
+
+.homepage p {
+  margin-left: 30px;
+  line-height: 30px;
+  font-size: 18px;
+}
+
+.homepage button {
+  margin: 10px 30px 
+}
+
+.homepage h1 {
+  border: #122c73 .5px solid;
+  border-radius: 4px;
+  margin-right: 480px;
+  background-color: #d4e0ff;
+  color: #122c73;
+  padding-left: 5px;
+  display: inline-block;
+}
+
+
+.homepage .emailhead {
+  border: none;
+  background-color: #718bd2;
+  color: white;
+  font-size: 35px;
+
+}
+
+/* .homepage .footer{
+ !!!!! get in center !!!
+} */
+
 
 .selector {
   display: flex;
