@@ -1,7 +1,11 @@
-import { useEffect } from "react"
+import { useContext, useEffect } from "react"
 import { fetchMovieDataById } from "../js/fetch-data";
+import { MovieContext } from "../MovieContext";
+import MovieBox from "../components/MovieBox";
 
 const Browse = ({}) => {
+
+    const {allMovieInfo, isLoading} = useContext(MovieContext);
 
     useEffect(() => {
         fetchMovieDataById(14306);
@@ -12,7 +16,12 @@ const Browse = ({}) => {
             <div className="browsepage">
                 <h2 className="broswehead">Greatest Of All Time Movies</h2>
                 <div className="movieflex">
-                    <div className="moviebox">
+
+                {isLoading ? <p>Loading page...</p> : allMovieInfo.map((movieData, index) => (
+                                <MovieBox key={"movie" + index} movieData={movieData} />
+                            ))}
+
+                    {/* <div className="moviebox">
                         <p>flex 1</p>
                     </div>
                         <div className="moviebox">
@@ -73,7 +82,7 @@ const Browse = ({}) => {
                         <p>flex 8b</p>
                         <button class="arrow-button">→</button>
 
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>

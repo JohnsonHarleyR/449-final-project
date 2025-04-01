@@ -164,6 +164,9 @@ input{
   justify-content: space-between;
  }
 
+ .browseMovieImage {
+  width: 200px;
+ }
 
 .arrow-right {
   background-color: #cbd5f1;
