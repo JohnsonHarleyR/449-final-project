@@ -122,6 +122,8 @@ input{
   letter-spacing: 1.5px;
 }
 
+
+
 .selector {
   display: flex;
   text-transform: capitalize;
