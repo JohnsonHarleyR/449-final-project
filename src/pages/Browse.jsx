@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react"
 import { fetchMovieDataById } from "../js/fetch-data";
 import { MovieContext } from "../MovieContext";
 import MovieBox from "../components/MovieBox";
+import Loading from "../components/Loading";
 
 const Browse = ({}) => {
 
@@ -17,7 +18,7 @@ const Browse = ({}) => {
                 <h2 className="broswehead">Greatest Of All Time Movies</h2>
                 <div className="movieflex">
 
-                {isLoading ? <p>Loading page...</p> : allMovieInfo.map((movieData, index) => (
+                {isLoading ? <Loading /> : allMovieInfo.map((movieData, index) => (
                                 <MovieBox key={"movie" + index} movieData={movieData} />
                             ))}
 
