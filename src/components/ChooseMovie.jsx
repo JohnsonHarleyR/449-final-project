@@ -67,9 +67,7 @@ const ChooseMovie = ({}) => {
     // All the different attributes will be mapped, in order for a user to select or deselect one
     return (
         <>
-            {isLoading ? <h2>Data is still loading...</h2> :
-            <>
-                <div className='choose-movie'>
+            <div className='choose-movie'>
                     <div className='selection-div'>
                         {moods.map((item, index) => (
                                 <Selector key={"mood" + index} attribute={item} />
@@ -98,8 +96,6 @@ const ChooseMovie = ({}) => {
                     (<p>No matches yet</p>)
                     }
                 </div>
-            </>
-            }
             
         </>
         
