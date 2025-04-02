@@ -90,7 +90,7 @@ const ChooseMovie = ({}) => {
                     {chosenMovie !== null ? 
                     (<div>
                         <img src={chosenMovie.image} />;
-                        <h2>{chosenMovie.title}</h2>
+                        <h2>{chosenMovie.name}</h2>
                     </div>)
                     :
                     (<p>No matches yet</p>)

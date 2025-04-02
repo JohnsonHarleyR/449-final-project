@@ -1,6 +1,6 @@
 const MovieBox = ({movieData}) => {
 
-    const {id, title, releaseDate, tagline, image} = movieData;
+    const {id, name, image} = movieData;
 
 
     return (
@@ -9,7 +9,7 @@ const MovieBox = ({movieData}) => {
                 <img className="browseMovieImage" src={image} />
             </div>
             <div className="movietitle">
-                <p>{title}</p>
+                <p>{name}</p>
                 <button className="arrow-button">→</button>
             </div>
         </div>

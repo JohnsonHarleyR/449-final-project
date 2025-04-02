@@ -4,7 +4,7 @@ import { createClient } from 'https://cdn.skypack.dev/@supabase/supabase-js@2.7.
 const movieApiToken = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1NWVkOTg1OTE3NTc3MzBiMzMyODcxNDYzZTFiNWUzOCIsIm5iZiI6MTc0MzEwMDA5Ni42OTQwMDAyLCJzdWIiOiI2N2U1OThjMGU4YTE5MTBlNjUxMGMzYWQiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.BbsCCSrT-1XqR4-89t-xWgNndmH0FPded91HKBpzPwk";
 const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhianFmY2hhZHR1anZ2eWdrcnVpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDI1OTc3MzYsImV4cCI6MjA1ODE3MzczNn0.28kUpBvmKOzrwaVpI9yA7EiqaexZic1erElczZRyPqg";
 
-export async function fetchAllInitialMovieData() {
+export async function fetchAllInitialMovieData(setData) {
   const supabaseUrl = 'https://xbjqfchadtujvvygkrui.supabase.co'
   const supabase = createClient(supabaseUrl, supabaseKey)
 
@@ -15,7 +15,14 @@ export async function fetchAllInitialMovieData() {
   if (error) {
     console.log('error: ', error);
   }
-  return movies;
+  let completedMovies = [];
+  for (const movie of movies) {
+    completedMovies.push({
+      ...movie,
+      image: `/movieImages/${movie.id}.png`
+    });
+  }
+  setData(completedMovies);
 }
 
 export async function fetchMovieDataById(movieId) {
