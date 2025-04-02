@@ -10,7 +10,7 @@ const MovieBox = ({movieData}) => {
             </div>
             <div className="movietitle">
                 <p>{title}</p>
-                <button class="arrow-button">→</button>
+                <button className="arrow-button">→</button>
             </div>
         </div>
     )
