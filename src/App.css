@@ -40,7 +40,7 @@ header {
 nav {
   background-color: var(--dark-background-color);
   width: 100%;
-  padding: 5px 0 10px 0;
+  padding: 15px 0 15px 0;
 }
 
 nav ul {
@@ -70,6 +70,10 @@ nav a:hover {
   text-align: left;
 }
 
+.container{
+  display: initial;
+}
+
 .homepage div{
   padding: 10px;
 }
@@ -78,10 +82,12 @@ nav a:hover {
   margin-left: 30px;
   line-height: var(--paragraph-line-height);
   font-size: var(--paragraph-font-size);
+  margin-bottom: 10px;
 }
 
 button {
   margin: 10px 10px 10px 10px;
+  color: var(--dark-background-color);
 }
 
 button:hover{
@@ -96,6 +102,8 @@ button:hover{
   color: var(--dark-background-color);
   padding-left: 5px;
   display: inline-block;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .homepage .emailhead {
@@ -111,7 +119,7 @@ button:hover{
 }
 
 .homepage .inputinfo {
-  height: 35px;
+  height: 45px;
   width: 300px;
   border-radius: 4px;
 }
@@ -128,6 +136,8 @@ input{
   font-size: 15px;
   padding: 5px;
   letter-spacing: 1.5px;
+  background-color: var(--light-background-color);
+  border: var(--dark-background-color) solid 1px;
 }
 
 .browsepage{
@@ -139,17 +149,20 @@ input{
   grid-template-columns: repeat(4, 1fr);
   text-align: center;
   row-gap: 16px;
-  column-gap: 140px;
+  column-gap: 40px;
   margin-top: -76px;
 }
 
 .moviebox{
   background-color: var(--light-background-color);
-  margin: 90px 0 0 0;
+  margin: 90px 0 20px 0;
   border-radius: 4px;
-  height: 300px;
+  height: 330px;
   box-shadow: 1px 1px 2px 2px black;
   color: black;
+  width: 260px;
+  align-content: center;
+  justify-items: center;
 }
 
 .broswehead{
@@ -166,10 +179,19 @@ input{
   color: black;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  width: 260px;
+  height: 90px;
+ }
+
+ .movietitle p{
+  margin: 0 0 0 5px;
+  font-weight: bold;
  }
 
  .browseMovieImage {
   width: 200px;
+  border-radius: 4px;
  }
 
 .arrow-right {
