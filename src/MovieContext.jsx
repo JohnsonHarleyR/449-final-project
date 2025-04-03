@@ -12,6 +12,8 @@ const MovieProvider = ({children}) => {
 
     const [selectedAttributes, setSelectedAttributes] = useState([]);
 
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
     // when user unclicks an attribute, it will remove it from this list
     const removeFromAttributes = (itemToRemove) => {
         let newAttributes = [];
@@ -30,6 +32,14 @@ const MovieProvider = ({children}) => {
         }
     }
 
+    const openModal = () => {
+        setIsModalOpen(true);
+    }
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    }
+
     useEffect(() => {
         // fetchAllMovieData(setAllMovieInfo);
         fetchAllInitialMovieData(setAllMovieInfo);
@@ -44,7 +54,8 @@ const MovieProvider = ({children}) => {
     return <MovieContext.Provider value={{
         allMovieInfo, isLoading, error,
         selectedAttributes, setSelectedAttributes,
-        removeFromAttributes, addToAttributes
+        removeFromAttributes, addToAttributes,
+        isModalOpen, openModal, closeModal
     }}>
         {children}
     </MovieContext.Provider>

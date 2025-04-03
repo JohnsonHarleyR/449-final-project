@@ -6,6 +6,8 @@
   --paragraph-line-height: 30px;
   --paragraph-font-size: 18px;
   --light-background-color: #d4e0ff;
+
+  --modal-text-color: #000000;
 }
 body{
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif  ;
@@ -191,4 +193,9 @@ input{
 
 .selection-div {
   border: 1px solid blue;
+}
+
+/* All changes to the css inside of the modal should include this .modal-area class */
+.modal-area {
+  color: var(--modal-text-color);
 }
