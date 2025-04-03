@@ -6,11 +6,14 @@ const GeneratedMovieDisplay = ({movieData}) => {
 
     return (
         <>
+            {/* Basically, if there's no movie data, it will show a loading screen */}
             {movieData !== null ?
-            (<div>
-            <img src={image} />
-            <h2>{name}</h2>
-        </div>) : (
+            (
+            <div>
+                <img src={image} />
+                <h2>{name}</h2>
+            </div>
+        ) : (
             <Loading />
         )
 
