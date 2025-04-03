@@ -25,7 +25,7 @@ export async function fetchAllInitialMovieData(setData) {
   setData(completedMovies);
 }
 
-export async function fetchMovieDataById(movieId) {
+export async function fetchMovieDataById(movieId, setNewData) {
     const url = `https://api.themoviedb.org/3/movie/${movieId}?language=en-US`;
     const posterPath = "https://media.themoviedb.org/t/p/w600_and_h900_bestv2";
 
@@ -49,30 +49,9 @@ export async function fetchMovieDataById(movieId) {
             genres: fetchedData['genres'],
             image: `${posterPath}${fetchedData["poster_path"]}`
         }
-        return data;
+        setNewData(data);
       } catch (error) {
         console.log("Error in fetch: ", error);
-        return null;
+        setNewData(null);
       }
-}
-
-export async function fetchAllMovieData(setData) {
-  const moviesWithAttributes = await fetchAllInitialMovieData();
-  let allMovies = [];
-
-  for (const movieInfo of moviesWithAttributes) {
-    let newData = await fetchMovieDataById(movieInfo.id);
-    if (newData !== null) { // a little error handling, does not add if movie did not load
-        allMovies.push({
-            ...newData,
-            weather: movieInfo.weather,
-            mood: movieInfo.mood,
-            interest: movieInfo.interest,
-        });
-    } else {
-        console.log("Error loading movie with ID:", movieInfo.id);
-    }
-
-  }
-  setData(allMovies);
 }

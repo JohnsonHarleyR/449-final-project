@@ -1,16 +1,25 @@
-import { useContext, useEffect } from "react"
-import { fetchMovieDataById } from "../js/fetch-data";
+import { useContext, useEffect, useState } from "react"
 import { MovieContext } from "../MovieContext";
 import MovieBox from "../components/MovieBox";
 import Loading from "../components/Loading";
+import BrowseMovieDisplay from "../components/BrowseMovieDisplay";
+import Modal from "../components/Modal";
 
 const Browse = ({}) => {
 
     const {allMovieInfo, isLoading} = useContext(MovieContext);
+    const [movieIdToShow, setMovieIdToShow] = useState(null);
+
+    const {modalMovieDataForBrowse, loadMovieDataInBrowse} = useContext(MovieContext);
+
+    // show loading component if nothing is loaded yet, or if the new data isn't loaded yet
+    const showModal = modalMovieDataForBrowse !== null && movieIdToShow === modalMovieDataForBrowse.id;
 
     useEffect(() => {
-        fetchMovieDataById(14306);
-    }, []);
+        if (movieIdToShow !== null) {
+            loadMovieDataInBrowse(movieIdToShow);
+        }
+    }, [movieIdToShow])
 
     return (
         <div className="homepage">
@@ -19,73 +28,20 @@ const Browse = ({}) => {
                 <div className="movieflex">
 
                 {isLoading ? <Loading /> : allMovieInfo.map((movieData, index) => (
-                                <MovieBox key={"movie" + index} movieData={movieData} />
+                                <MovieBox key={"movie" + index} movieData={movieData} setIdToShow={setMovieIdToShow} />
                             ))}
-
-                    {/* <div className="moviebox">
-                        <p>flex 1</p>
-                    </div>
-                        <div className="moviebox">
-                            <p>flex 1b</p>
-                        </div>
-                    <div className="moviebox">
-                        <p>flex 2</p>
-                    </div>
-                    <div className="moviebox">
-                        <p>flex 2b</p>
-                    </div>
-                    <div className="movietitle">
-                        <p>flex 3</p>
-                        <button class="arrow-button">→</button>
-                    </div>
-                    <div className="movietitle">
-                        <p>flex 3b</p>
-                        <button class="arrow-button">→</button>
-
-                    </div>
-                    <div className="movietitle">
-                        <p>flex 4</p>
-                        <button class="arrow-button">→</button>
-
-                    </div>
-                    <div className="movietitle">
-                        <p>flex 4b</p>
-                        <button class="arrow-button">→</button>
-                    </div>
-                    <div className="moviebox">
-                        <p>flex 5</p>
-                    </div>
-                    <div className="moviebox">
-                        <p>flex 5b</p>
-                    </div>
-                    <div className="moviebox">
-                        <p>flex 6</p>
-                    </div>
-                    <div className="moviebox">
-                        <p>flex 6b</p>
-                    </div>
-                    <div className="movietitle">
-                        <p>flex 7</p>
-                        <button class="arrow-button">→</button>
-
-                    </div>
-                    <div className="movietitle">
-                        <p>flex 7b</p>
-                        <button class="arrow-button">→</button>
-
-                    </div>
-                    <div className="movietitle">
-                        <p>flex 8</p>
-                        <button class="arrow-button">→</button>
-
-                    </div>
-                    <div className="movietitle">
-                        <p>flex 8b</p>
-                        <button class="arrow-button">→</button>
-
-                    </div> */}
                 </div>
             </div>
+            {/* Modal area */}
+            <Modal>
+                {/* Show loading if the new data isn't fetched yet */}
+                {showModal ? (
+                    <BrowseMovieDisplay movieId={movieIdToShow} />
+                ) : 
+                (
+                    <Loading />
+                )}
+            </Modal>
         </div>
     )
 }

@@ -37,6 +37,11 @@ const MovieGen = ({}) => {
 
     // For now, this uses the testing data until we get the database set up
     const determineMovie = () => {
+        // cancel if nothing is selected to prevent error
+        if (selectedAttributes.length === 0 || isLoading === true) {
+            return;
+        }
+
         let bestMovieMatches = [];
         let highestMatchCount = 0;
         // loop through all movies to find one with most matches
@@ -97,6 +102,7 @@ const MovieGen = ({}) => {
                         
                     </div>
                     <div>
+                    {/* TODO Disable button if nothing is selected */}
                     <button className='choose-movie-btn' onClick={determineMovie}>Pick Movie</button>
                     <Modal>
                         <GeneratedMovieDisplay movieData={chosenMovie} />

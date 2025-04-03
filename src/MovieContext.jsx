@@ -1,5 +1,5 @@
 import React, {useState, createContext, useEffect} from 'react';
-import { fetchAllInitialMovieData } from './js/fetch-data';
+import { fetchAllInitialMovieData, fetchMovieDataById } from './js/fetch-data';
 
 // This all allows us to store variables outside of components without having to pass a bunch of them
 const MovieContext = createContext({});
@@ -13,6 +13,7 @@ const MovieProvider = ({children}) => {
     const [selectedAttributes, setSelectedAttributes] = useState([]);
 
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [modalMovieDataForBrowse, setModalMovieDataForBrowse] = useState(null);
 
     // when user unclicks an attribute, it will remove it from this list
     const removeFromAttributes = (itemToRemove) => {
@@ -40,6 +41,10 @@ const MovieProvider = ({children}) => {
         setIsModalOpen(false);
     }
 
+    const loadMovieDataInBrowse = (movieId) => {
+        fetchMovieDataById(movieId, setModalMovieDataForBrowse);
+    }
+
     useEffect(() => {
         // fetchAllMovieData(setAllMovieInfo);
         fetchAllInitialMovieData(setAllMovieInfo);
@@ -55,7 +60,8 @@ const MovieProvider = ({children}) => {
         allMovieInfo, isLoading, error,
         selectedAttributes, setSelectedAttributes,
         removeFromAttributes, addToAttributes,
-        isModalOpen, openModal, closeModal
+        isModalOpen, openModal, closeModal,
+        modalMovieDataForBrowse, loadMovieDataInBrowse
     }}>
         {children}
     </MovieContext.Provider>
