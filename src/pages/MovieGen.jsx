@@ -85,23 +85,26 @@ const MovieGen = ({}) => {
                 <>
                     <div className='choose-movie'>
                         <div className='selection-div'>
+                            <h3>Your Mood:</h3>
                             {moods.map((item, index) => (
                                     <Selector key={"mood" + index} attribute={item} />
                                 ))}
                         </div>
                         <div className='selection-div'>
+                            <h3>The Weather:</h3>
                             {weather.map((item, index) => (
                                     <Selector key={"weather" + index} attribute={item} />
                                 ))}
                         </div>
                         <div className='selection-div'>
+                            <h3>Your Hobbies:</h3>
                             {interests.map((item, index) => (
                                     <Selector key={"interest" + index} attribute={item} />
                                 ))}
                         </div>
                         
                     </div>
-                    <div>
+                    <div className='movie-btn'>
                     {/* TODO Disable button if nothing is selected */}
                     <button className='choose-movie-btn' onClick={determineMovie}>Pick Movie</button>
                     <Modal>

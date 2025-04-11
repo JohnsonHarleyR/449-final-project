@@ -5,6 +5,7 @@
   --paragraph-line-height: 30px;
   --paragraph-font-size: 18px;
   --light-background-color: #d4e0ff;
+  --box-shadow: 1px 1px 2px 2px black;
 
   --modal-text-color: #000000;
 }
@@ -87,6 +88,7 @@ nav a:hover {
 button {
   margin: 10px 10px 10px 10px;
   color: var(--dark-background-color);
+  box-shadow: var(--box-shadow);
 }
 
 button:hover{
@@ -95,7 +97,7 @@ button:hover{
 }
 
 .homepage h1 {
-  border: var(--dark-background-color) .5px solid;
+  box-shadow: var(--box-shadow);
   border-radius: 4px;
   background-color: #d4e0ff;
   color: var(--dark-background-color);
@@ -106,7 +108,7 @@ button:hover{
 }
 
 .homepage .emailhead {
-  border: none;
+  box-shadow: none;
   background: none;
   display: block;
   color: white;
@@ -121,6 +123,8 @@ button:hover{
   height: 45px;
   width: 300px;
   border-radius: 4px;
+  box-shadow: var(--box-shadow);
+
 }
 
 ::placeholder{
@@ -157,7 +161,7 @@ input{
   margin: 90px 0 20px 0;
   border-radius: 4px;
   height: 330px;
-  box-shadow: 1px 1px 2px 2px black;
+  box-shadow: var(--box-shadow);
   color: black;
   width: 260px;
   align-content: center;
@@ -165,16 +169,19 @@ input{
 }
 
 .broswehead{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   font-size: 60px;
-  margin-top: 0;
-  padding-top: 20px;
+  margin: 20px 0 20px 0 ;
+  padding-top: 10px;
 }
 
 .movietitle{
   background: var(--light-background-color);
   border-radius: 4px;
-  box-shadow: 1px 1px 2px 2px black;
+  box-shadow: var(--box-shadow);
   color: black;
   display: flex;
   justify-content: space-between;
@@ -219,9 +226,15 @@ input{
 }
 
 .modal-area .exitbutton {
-  background-color: rgba(128, 128, 128, 0.092);
-  border: solid .5px black;
+  background-color: var(--dark-background-color);
+  color: white;
 }
+
+.modal-area .exitbutton:hover{
+  background-color: var(--light-background-color);
+  color: var(--dark-background-color);
+} 
+
 .browsemoviedisplay h3{
   font-weight: bold;
   font-size: 30px;
@@ -244,13 +257,36 @@ input{
 
 .choose-movie {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
 }
 
 .selection-div {
-  border: 1px solid blue;
+  box-shadow: var(--box-shadow);
+  background-color: var(--light-background-color);
+  color: var(--dark-background-color);
+  width: 300px;
+  border-radius: 4px;
+  text-align: center;
+  margin: 60px 0 40px 0;
+  height: 480px;
 }
+
+.selection-div h3 {
+  font-weight: bold;
+  font-size: 25px;
+  padding: 10px;
+  margin: 15px 0 10px 0;
+}
+.movie-btn{
+  display: grid;
+  justify-content: center;
+  margin-top: -20px;
+}
+
 
 /* All changes to the css inside of the modal should include this .modal-area class */
 .modal-area {
-  color: var(--modal-text-color);
+  color: var(--modal-text-color);  
 }
