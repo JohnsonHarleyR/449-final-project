@@ -89,12 +89,14 @@ button {
   margin: 10px 10px 10px 10px;
   color: var(--dark-background-color);
   box-shadow: var(--box-shadow);
+  font-weight: bold;
 }
 
 button:hover{
   background-color: var(--dark-background-color);
   color: white;
 }
+
 
 .homepage h1 {
   box-shadow: var(--box-shadow);
@@ -249,6 +251,7 @@ input{
 .browsemoviedisplay p{
   line-height: 35px;
 }
+
 
 .selector {
   display: flex;
