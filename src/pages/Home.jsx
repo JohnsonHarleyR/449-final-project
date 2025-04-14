@@ -1,5 +1,11 @@
-const Home = ({}) => {
+import { useNavigate } from "react-router-dom"
 
+const Home = ({}) => {
+    let navigate = useNavigate();
+    function goToGenPage() {
+        let path = "/generator";
+        navigate(path);
+    }
 
     return (
         <div className="homepage">
@@ -13,7 +19,7 @@ const Home = ({}) => {
                 <p> 1. Tell Us How You Feel-Select your current mood, let us analyze the weather in your area or select a hobbie of yours. Get Tailored Recommendations</p> 
                 <p> 2. We curate a list of movies that match your vibe. Discover Something New</p> 
                 <p> 3. Find hidden gems, trending hits, or comforting favorites suited to your mood.</p>
-                <button>TRY IT NOW!</button>
+                <button onClick={goToGenPage}>TRY IT NOW!</button>
             </div>
             <div>
                 <h1 className="emailhead">Join our Email list for all the new movie updates!</h1>

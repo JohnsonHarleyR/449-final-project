@@ -9,6 +9,8 @@ import logo from '/logo/logo.svg'
 
 function App() {
 
+
+
   return (
     <MovieProvider>
       <Router>
