@@ -8,6 +8,7 @@
   --box-shadow: 1px 1px 2px 2px black;
 
   --modal-text-color: #000000;
+  --modal-movie-img-height: 500px;
 }
 body{
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif  ;
@@ -245,11 +246,15 @@ input{
 
 .browsemoviedisplay img{
   border-radius: 4px;
-  height: 500px;
+  height: var(--modal-movie-img-height);
 }
 
 .browsemoviedisplay p{
   line-height: 35px;
+}
+
+.genmoviedisplay img {
+  height: var(--modal-movie-img-height);
 }
 
 
