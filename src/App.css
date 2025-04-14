@@ -153,8 +153,6 @@ input{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   text-align: center;
-  row-gap: 16px;
-  column-gap: 40px;
   margin-top: -76px;
 }
 
@@ -162,10 +160,8 @@ input{
   background-color: var(--light-background-color);
   margin: 90px 0 20px 0;
   border-radius: 4px;
-  height: 330px;
   box-shadow: var(--box-shadow);
   color: black;
-  width: 260px;
   align-content: center;
   justify-items: center;
 }
@@ -188,8 +184,6 @@ input{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 260px;
-  height: 90px;
  }
 
  .movietitle p{
@@ -198,7 +192,6 @@ input{
  }
 
  .browseMovieImage {
-  width: 200px;
   border-radius: 4px;
  }
 
