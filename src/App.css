@@ -274,7 +274,6 @@ input{
 
 .genmoviedisplay img {
   height: var(--modal-movie-img-height);
-  border: 1px solid var(--dark-background-color);
   justify-self: center;
   margin-left: 40px;
   margin-right: 40px;
