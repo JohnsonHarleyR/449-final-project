@@ -270,6 +270,13 @@ input{
 .selector {
   display: flex;
   text-transform: capitalize;
+  align-items: center;
+  margin-bottom: 10px;
+
+}
+
+.selector p {
+  margin-bottom: 0;
 }
 
 .choose-movie {

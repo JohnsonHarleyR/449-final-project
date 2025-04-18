@@ -22,7 +22,7 @@ const Selector = ({attribute}) => {
 
     return (
         <div className='selector'>
-            <input type="checkbox" checked={isSelected} onChange={changeSelected} />
+            <input className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm' type="checkbox" checked={isSelected} onChange={changeSelected} />
             <p>{attribute}</p>
         </div>
     );
