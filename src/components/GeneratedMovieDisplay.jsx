@@ -11,8 +11,9 @@ const GeneratedMovieDisplay = ({movieData}) => {
             {showData ?
             (
             <div className="genmoviedisplay">
+                <h2 className="genmovietitle">Your movie is:</h2>
                 <img src={image} />
-                <h2>{name}</h2>
+                <h3>{name}</h3>
             </div>
         ) : (
             <Loading />

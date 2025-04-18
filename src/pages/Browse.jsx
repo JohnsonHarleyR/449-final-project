@@ -15,6 +15,7 @@ const Browse = ({}) => {
     // show loading component if nothing is loaded yet, or if the new data isn't loaded yet
     const showModal = modalMovieDataForBrowse !== null && movieIdToShow === modalMovieDataForBrowse.id;
 
+    // If someone selects a movie, movieIdToShow will change and then it will load it into a modal
     useEffect(() => {
         if (movieIdToShow !== null) {
             loadMovieDataInBrowse(movieIdToShow);
@@ -26,7 +27,7 @@ const Browse = ({}) => {
             {isLoading ? (<Loading isLightColor={true} />) : (
                 <>
                     <div className="browsepage">
-                        <h2 className="broswehead">Greatest Of All Time Movies</h2>
+                        <h2 className="pagetitle broswehead">Greatest Of All Time Movies</h2>
                         <div className="movieflex">
 
                         {allMovieInfo.map((movieData, index) => (

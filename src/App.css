@@ -186,12 +186,19 @@ input{
   
 }
 
-.broswehead{
+.pagetitle {
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   font-size: 60px;
+}
+
+.generatehead {
+  padding-top: 30px;
+}
+
+.broswehead{
   margin: 20px 0 20px 0 ;
   padding-top: 10px;
 }
@@ -267,9 +274,19 @@ input{
 
 .genmoviedisplay img {
   height: var(--modal-movie-img-height);
+  border: 1px solid var(--dark-background-color);
+  justify-self: center;
 }
 
-.genmoviedisplay h2{
+.genmoviedisplay h2 {
+  text-align: center;
+  font-size: 45px;
+  font-weight: bold;
+  line-height: var(--paragraph-line-height);
+  margin: 10px 0 30px 0;
+}
+
+.genmoviedisplay h3 {
   text-align: center;
   font-size: 30px;
   font-weight: bold;
@@ -304,7 +321,7 @@ input{
   width: 300px;
   border-radius: 4px;
   text-align: center;
-  margin: 60px 0 40px 0;
+  margin: 20px 0 40px 0;
   height: 480px;
 }
 

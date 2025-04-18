@@ -83,6 +83,7 @@ const MovieGen = ({}) => {
                 <Loading isLightColor={true} />
             ) : (
                 <>
+                    <h2 className='pagetitle generatehead'>Pick a movie based on...</h2>
                     <div className='choose-movie'>
                         <div className='selection-div'>
                             <h3>Your Mood:</h3>
