@@ -10,6 +10,9 @@
 
   --modal-text-color: #000000;
   --modal-movie-img-height: 500px;
+
+  --max-browse-movie-width: 300px;
+  --browse-movie-area-bottom-margin: 45px;
 }
 body{
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif  ;
@@ -156,23 +159,31 @@ input{
 
 .browsepage{
   margin: 0 40px 0 40px ;
+  
 }
 .movieflex{
   background-color: var(--body-background-color);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   text-align: center;
-  margin-top: -76px;
+  margin-top: 40px;
+  justify-items: center;
+}
+
+.movieBoxArea {
+  max-width: var(--max-browse-movie-width);
+  margin-bottom: var(--browse-movie-area-bottom-margin);
 }
 
 .moviebox{
   background-color: var(--light-background-color);
-  margin: 90px 0 20px 0;
+  margin: 0 0 20px 0;
   border-radius: 4px;
   box-shadow: var(--box-shadow);
   color: black;
   align-content: center;
   justify-items: center;
+  
 }
 
 .broswehead{

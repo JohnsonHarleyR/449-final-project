@@ -26,24 +26,24 @@ const Browse = ({}) => {
             {isLoading ? (<Loading isLightColor={true} />) : (
                 <>
                     <div className="browsepage">
-                    <h2 className="broswehead">Greatest Of All Time Movies</h2>
-                    <div className="movieflex">
+                        <h2 className="broswehead">Greatest Of All Time Movies</h2>
+                        <div className="movieflex">
 
-                    {allMovieInfo.map((movieData, index) => (
-                                    <MovieBox key={"movie" + index} movieData={movieData} setIdToShow={setMovieIdToShow} />
-                                ))}
+                        {allMovieInfo.map((movieData, index) => (
+                                        <MovieBox key={"movie" + index} movieData={movieData} setIdToShow={setMovieIdToShow} />
+                                    ))}
+                        </div>
                     </div>
-                </div>
-                {/* Modal area */}
-                <Modal>
-                    {/* Show loading if the new data isn't fetched yet */}
-                    {showModal ? (
-                        <BrowseMovieDisplay movieId={movieIdToShow} />
-                    ) : 
-                    (
-                        <Loading />
-                    )}
-                </Modal>
+                    {/* Modal area */}
+                    <Modal>
+                        {/* Show loading if the new data isn't fetched yet */}
+                        {showModal ? (
+                            <BrowseMovieDisplay movieId={movieIdToShow} />
+                        ) : 
+                        (
+                            <Loading />
+                        )}
+                    </Modal>
                 </>
             )}
             
