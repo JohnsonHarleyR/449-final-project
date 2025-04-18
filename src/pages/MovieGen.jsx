@@ -78,9 +78,9 @@ const MovieGen = ({}) => {
 
     return (
         // Will show loading component if everything hasn't been retrieved from supabase yet
-        <div className='homepage'>
+        <div className='homepage full-height'>
             {isLoading ? (
-                <Loading />
+                <Loading isLightColor={true} />
             ) : (
                 <>
                     <div className='choose-movie'>
