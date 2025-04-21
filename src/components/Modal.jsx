@@ -6,7 +6,6 @@ const Modal = ({children}) => {
     const {isModalOpen, closeModal} = useContext(MovieContext);
 
     return (
-        // All of this was modified from the Tailwind taken here: https://tailwindcss.com/plus/ui-blocks/application-ui/overlays/modal-dialogs
         <>
             {!isModalOpen ? (<></>) :
             (

@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-:root{
+:root {
   --dark-background-color: #122c73;
   --body-background-color: #718bd2;
   --paragraph-line-height: 30px;
@@ -14,8 +14,9 @@
   --max-browse-movie-width: 300px;
   --browse-movie-area-bottom-margin: 45px;
 }
-body{
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif  ;
+
+body {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   color: white;
   letter-spacing: 1px;
   display: block;
@@ -51,7 +52,7 @@ nav {
 nav ul {
   list-style: none;
   display: flex;
-  gap:30px;
+  gap: 30px;
   justify-content: center;
 }
 
@@ -81,11 +82,11 @@ nav a:hover {
   min-height: 100vh;
 }
 
-.container{
+.container {
   display: initial;
 }
 
-.homepage div{
+.homepage div {
   padding: 10px;
 }
 
@@ -103,10 +104,16 @@ button {
   font-weight: bold;
 }
 
-button:hover{
+button:hover {
   background-color: var(--dark-background-color);
   color: white;
   text-decoration: underline;
+}
+
+.disabled-btn {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 
@@ -129,6 +136,7 @@ button:hover{
   font-size: 35px;
   text-align: center;
 }
+
 .emailinfo {
   text-align: center;
 }
@@ -141,14 +149,14 @@ button:hover{
 
 }
 
-::placeholder{
+::placeholder {
   color: black;
   font-size: 15px;
   padding: 5px;
   letter-spacing: 1.5px;
 }
 
-input{
+input {
   color: black;
   font-size: 15px;
   padding: 5px;
@@ -157,11 +165,12 @@ input{
   border: var(--dark-background-color) solid 1px;
 }
 
-.browsepage{
-  margin: 0 40px 0 40px ;
-  
+.browsepage {
+  margin: 0 40px 0 40px;
+
 }
-.movieflex{
+
+.movieflex {
   background-color: var(--body-background-color);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -175,7 +184,7 @@ input{
   margin-bottom: var(--browse-movie-area-bottom-margin);
 }
 
-.moviebox{
+.moviebox {
   background-color: var(--light-background-color);
   margin: 0 0 20px 0;
   border-radius: 4px;
@@ -183,7 +192,7 @@ input{
   color: black;
   align-content: center;
   justify-items: center;
-  
+
 }
 
 .pagetitle {
@@ -198,12 +207,12 @@ input{
   padding-top: 30px;
 }
 
-.broswehead{
-  margin: 20px 0 20px 0 ;
+.broswehead {
+  margin: 20px 0 20px 0;
   padding-top: 10px;
 }
 
-.movietitle{
+.movietitle {
   background: var(--light-background-color);
   border-radius: 4px;
   box-shadow: var(--box-shadow);
@@ -211,16 +220,16 @@ input{
   display: flex;
   justify-content: space-between;
   align-items: center;
- }
+}
 
- .movietitle p{
+.movietitle p {
   margin: 0 0 0 5px;
   font-weight: bold;
- }
+}
 
- .browseMovieImage {
+.browseMovieImage {
   border-radius: 4px;
- }
+}
 
 .arrow-right {
   background-color: #cbd5f1;
@@ -231,17 +240,17 @@ input{
 
 }
 
-.browsemoviedisplay{
+.browsemoviedisplay {
   line-height: 40px;
   display: flex;
 }
 
-.browsemoviedisplay .title-info{
+.browsemoviedisplay .title-info {
   padding: 5px;
   margin-left: 20px;
 }
 
-.modal-area{
+.modal-area {
   justify-items: right;
   border: black 1px solid;
   border-radius: 4px;
@@ -252,23 +261,23 @@ input{
   color: white;
 }
 
-.modal-area .exitbutton:hover{
+.modal-area .exitbutton:hover {
   background-color: var(--light-background-color);
   color: var(--dark-background-color);
-} 
+}
 
-.browsemoviedisplay h3{
+.browsemoviedisplay h3 {
   font-weight: bold;
   font-size: 30px;
   margin: 20px 0 20px 0;
 }
 
-.browsemoviedisplay img{
+.browsemoviedisplay img {
   border-radius: 4px;
   height: var(--modal-movie-img-height);
 }
 
-.browsemoviedisplay p{
+.browsemoviedisplay p {
   line-height: 35px;
 }
 
@@ -332,7 +341,8 @@ input{
   padding: 10px;
   margin: 15px 0 10px 0;
 }
-.movie-btn{
+
+.movie-btn {
   display: grid;
   justify-content: center;
   margin-top: -20px;
@@ -341,5 +351,5 @@ input{
 
 /* All changes to the css inside of the modal should include this .modal-area class */
 .modal-area {
-  color: var(--modal-text-color);  
+  color: var(--modal-text-color);
 }

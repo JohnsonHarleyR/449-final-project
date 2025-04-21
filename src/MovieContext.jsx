@@ -1,10 +1,10 @@
-import React, {useState, createContext, useEffect} from 'react';
+import React, { useState, createContext, useEffect } from 'react';
 import { fetchAllInitialMovieData, fetchMovieDataById } from './js/fetch-data';
 
 // This all allows us to store variables outside of components without having to pass a bunch of them
 const MovieContext = createContext({});
 
-const MovieProvider = ({children}) => {
+const MovieProvider = ({ children }) => {
 
     const [allMovieInfo, setAllMovieInfo] = useState([])
     const [isLoading, setIsLoading] = useState(true);
@@ -46,7 +46,6 @@ const MovieProvider = ({children}) => {
     }
 
     useEffect(() => {
-        // fetchAllMovieData(setAllMovieInfo);
         fetchAllInitialMovieData(setAllMovieInfo);
     }, []);
 
@@ -67,5 +66,5 @@ const MovieProvider = ({children}) => {
     </MovieContext.Provider>
 }
 
-export {MovieContext};
+export { MovieContext };
 export default MovieProvider;

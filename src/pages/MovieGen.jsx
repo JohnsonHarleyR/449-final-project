@@ -6,14 +6,18 @@ import Modal from '../components/Modal';
 import GeneratedMovieDisplay from '../components/GeneratedMovieDisplay';
 import Loading from '../components/Loading';
 
-const MovieGen = ({}) => {
+const MovieGen = ({ }) => {
 
     const [chosenMovie, setChosenMovie] = useState(null);
-    const {allMovieInfo, isLoading, openModal, selectedAttributes} = useContext(MovieContext);
-    
+    const { allMovieInfo, isLoading, openModal, selectedAttributes } = useContext(MovieContext);
+
     const [moods, setMoods] = useState([]);
     const [weather, setWeather] = useState([]);
     const [interests, setInterests] = useState([]);
+
+    const isButtonDisabled = selectedAttributes.length === 0;
+    const buttonClassName = isButtonDisabled ? 'disabled-btn' : '';
+
     const attributeTypes = ["mood", "weather", "interest"];
 
     const grabPossibleAttributes = (attrName) => {
@@ -34,6 +38,8 @@ const MovieGen = ({}) => {
             setInterests(grabPossibleAttributes("interest"));
         }
     }, [isLoading])
+
+
 
     // For now, this uses the testing data until we get the database set up
     const determineMovie = () => {
@@ -88,33 +94,33 @@ const MovieGen = ({}) => {
                         <div className='selection-div'>
                             <h3>Your Mood:</h3>
                             {moods.map((item, index) => (
-                                    <Selector key={"mood" + index} attribute={item} />
-                                ))}
+                                <Selector key={"mood" + index} attribute={item} />
+                            ))}
                         </div>
                         <div className='selection-div'>
                             <h3>The Weather:</h3>
                             {weather.map((item, index) => (
-                                    <Selector key={"weather" + index} attribute={item} />
-                                ))}
+                                <Selector key={"weather" + index} attribute={item} />
+                            ))}
                         </div>
                         <div className='selection-div'>
                             <h3>Your Hobbies:</h3>
                             {interests.map((item, index) => (
-                                    <Selector key={"interest" + index} attribute={item} />
-                                ))}
+                                <Selector key={"interest" + index} attribute={item} />
+                            ))}
                         </div>
-                        
+
                     </div>
                     <div className='movie-btn'>
-                    {/* TODO Disable button if nothing is selected */}
-                    <button className='choose-movie-btn' onClick={determineMovie}>Pick Movie</button>
-                    <Modal>
-                        <GeneratedMovieDisplay movieData={chosenMovie} />
-                    </Modal>
+                        {/* TODO Disable button if nothing is selected */}
+                        <button className={buttonClassName} onClick={determineMovie} disabled={isButtonDisabled}>Pick Movie</button>
+                        <Modal>
+                            <GeneratedMovieDisplay movieData={chosenMovie} />
+                        </Modal>
                     </div>
                 </>
             )}
-            
+
         </div>
     )
 }
