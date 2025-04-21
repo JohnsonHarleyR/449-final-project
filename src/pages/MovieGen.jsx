@@ -40,8 +40,6 @@ const MovieGen = ({ }) => {
     }, [isLoading])
 
 
-
-    // For now, this uses the testing data until we get the database set up
     const determineMovie = () => {
         // cancel if nothing is selected to prevent error
         if (selectedAttributes.length === 0 || isLoading === true) {
